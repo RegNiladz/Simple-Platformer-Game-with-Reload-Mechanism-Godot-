@@ -1,4 +1,4 @@
 # Simple-Platformer-Game-with-Reload-Mechanism-Godot-
 
- ![](Screenshoots/firing.gif {width=40px height=400px})
+ <img src="Screenshoots/Player.png" width="48">
 <h2></h2>
