@@ -10,6 +10,7 @@
     <td><img src="Screenshoots/Player.png" width="100" height ="100"> </td>
     <td><img src="Screenshoots/firing.gif" width="100" height ="100"></td>
   </tr>
+  <h3> The Enemy </h3>
   <table> <!---Table for Enemy--->
     <th> Enemy Skin </th> <!---Enemy Header --->
     <tr> <!---Contents--->
