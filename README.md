@@ -13,4 +13,4 @@
   <table> <!---Table for Enemy--->
     <th> Enemy Skin </th> <!---Enemy Header --->
     <tr> <!---Contents--->
-      <td> <td><img src="Assets/Default Sprite Top-Down Shooter/Enemy/Enemy.png" width="500" height ="500"> </td>
+      <td><img src="Assets/Default Sprite Top-Down Shooter/Enemy/Enemy.png" width="500" height ="500"> </td>
