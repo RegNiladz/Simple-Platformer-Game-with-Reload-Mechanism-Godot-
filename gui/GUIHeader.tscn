@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Font/impact.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Default Sprite Top-Down Shooter/Icon/machine-gun-magazine.png" type="Texture" id=2]
+[ext_resource path="res://gui/guiheader.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 1 )
+
+[node name="GUIHeader" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 464.0
+margin_bottom = 92.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoIcon" type="TextureRect" parent="."]
+margin_left = 19.7361
+margin_top = 10.2639
+margin_right = 108.736
+margin_bottom = 79.2639
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ammo_Counter" type="Label" parent="."]
+margin_left = 127.551
+margin_top = 3.43084
+margin_right = 234.551
+margin_bottom = 126.431
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

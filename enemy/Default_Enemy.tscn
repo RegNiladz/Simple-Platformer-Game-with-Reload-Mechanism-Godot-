@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Default Sprite Top-Down Shooter/Enemy/Enemy.png" type="Texture" id=1]
+[ext_resource path="res://enemy/default_enemy.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Font/impact.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Sound/Sound Effects/Hurt.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Enemy",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 72.5453, 125.231 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 148.141, 125.277 )
+
+[node name="Default_Enemy" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 35
+script = ExtResource( 2 )
+
+[node name="EnemySprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.565053, 0.565053 )
+frames = SubResource( 1 )
+animation = "Enemy"
+
+[node name="EnemyCollision2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -59.9323
+margin_top = -239.733
+margin_right = 66.0677
+margin_bottom = -116.733
+custom_fonts/font = SubResource( 3 )
+text = "##"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Side_Checker_Enemy" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 33
+
+[node name="Enemy_Side_Checker" type="CollisionShape2D" parent="Side_Checker_Enemy"]
+shape = SubResource( 4 )
+
+[node name="Enemy_Color_Change" type="Timer" parent="."]
+one_shot = true
+
+[node name="Enemy_Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="dead_enemy" from="." to="." method="_on_Default_Enemy_dead_enemy"]
+[connection signal="body_entered" from="Side_Checker_Enemy" to="." method="_on_Side_Checker_Enemy_body_entered"]
+[connection signal="timeout" from="Enemy_Color_Change" to="." method="_on_Enemy_Color_Change_timeout"]
