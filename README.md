@@ -18,3 +18,4 @@
     </tr>
   </table>
   <h3> Game-Play</h3>
+  <img src="Screenshoots/DEFUALTPLATFORM.gif" width="500" height ="500">
